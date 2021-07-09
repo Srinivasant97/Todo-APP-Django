@@ -1,0 +1,12 @@
+{% extends 'Todo/main.html' %}
+{% block content %}
+
+<form  class="btn btn-secondary"  method="POST" action="">
+	{% csrf_token %}
+	<p>Are you sure you want to Delete this Todo?</p>
+	<input class="btn btn-lg btn-danger" type="submit" value ="Confirm">
+	<a class="btn btn-primary" href="{% url 'list' %}">Cancel</a>	
+	
+</form>
+
+{% endblock content %}

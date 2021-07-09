@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+	<div style="align-items: center;" class="container">
+		<h1>Login</h1>
+		<form method="POST">
+			{% csrf_token %}
+			{{form.as_p}}
+			<input type="submit" name="Login">
+		</form>
+		<p>Don't have an account?</p>
+		<a href="{% url 'register' %}">Register</a>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% extends 'Todo/main.html' %}
+{% block content %}
+
+<div class="container-sm">
+	<h3 class="alert alert-primary">Tasks : {{detail}}</h3>
+	<h3 class="alert alert-secondary" >Details : {{detail.details}}</h3>
+	<h3 class="alert alert-success">Completed : {{detail.completed}}</h3>
+	<h3 class="alert alert-danger">Date : {{detail.Date}}</h3>
+</div>
+{% endblock content %}

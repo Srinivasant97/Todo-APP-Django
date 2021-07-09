@@ -1,0 +1,14 @@
+{% extends 'Todo/main.html' %}
+{% block content %}
+
+
+<h3 class="alert alert-primary">Todo Form</h3>
+<form class="mb-3" method="POST" action="">
+	{% csrf_token %}
+	{{form.as_p}}
+	<p>{{Date}} </p>
+	<input type="submit" value ="Submit">
+</form>
+<a href="{% url 'list' %}">Back</a>
+
+{% endblock content %}

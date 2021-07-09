@@ -1,0 +1,36 @@
+{% extends 'Todo/main.html' %}
+{% block content %}
+
+{% if request.user.is_authenticated %}
+<div style="margin-top: 20px" class="navbar navbar-light bg-light">
+	<p class="h1">{{request.user}}</p>
+	<a href="{% url 'logout' %}">Logout</a>
+	{% else %}
+	<a href="{% url 'login' %}">Login</a>
+	{% endif %}
+
+</div>
+
+<hr>
+<h1>My Todo List</h1>
+<a href="{% url 'create' %}">Add Task</a>
+
+<table class="table table-success table-striped">
+	<tr>
+		<th class="list-unstyled">Item</th>
+		<th class="list-unstyled"></th>
+		<th class="list-unstyled"></th>
+	</tr>
+	{% for a in tasks %}
+	<tr>
+		<td>{{a.task}}</td>
+		<td class="h6"><a href="{% url 'detail' a.id %}">View</a></td>
+		<td class="h6"><a href="{% url 'update' a.id %}">Edit</a></td>
+		<td class="h6"><a href="{% url 'delete' a.id %}">Delete</a></td>
+	</tr>
+	{% empty %}
+	<h3>No item in list</h3>
+	{% endfor %}
+</table>
+
+{% endblock content %}
